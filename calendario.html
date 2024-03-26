@@ -1,0 +1,72 @@
+<!doctype HTML>
+<html lang="it">
+    <head>
+        <title>Marzo</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Calendario di Marzo">
+        <meta name="author" content="Matteo Panicciari">
+        <link rel="stylesheet" href="calendario.css">
+    </head>
+    <body onload="start()">
+        <div class="titolo">Calendario</div>
+
+        <div class="grid-container" id="main">
+            <div class="sub-main" id="box-calendario">
+                <div class="grid-container" id="calendario">
+                    <div class="sotto-titolo">Marzo 2024</div>
+                    <div class="nome-giorni">
+                        <div id="lun">Lun</div>
+                        <div id="mar">Mar</div>
+                        <div id="mer">Mer</div>
+                        <div id="gio">Gio</div>
+                        <div id="ven">Ven</div>
+                        <div id="sab">Sab</div>
+                        <div id="dom">Dom</div>
+                    </div>
+                    <div class="griglia-giorni">
+                        <button onclick="change(this.id)" id="i"><time datetime="2024-03-01">1</time></button>
+                        <button onclick="change(this.id)" id="ii"><time datetime="2024-03-02">2</time></button>
+                        <button onclick="change(this.id)" id="iii"><time datetime="2024-03-03">3</time></button>
+                        <button onclick="change(this.id)" id="iv"><time datetime="2024-03-04">4</time></button>
+                        <button onclick="change(this.id)" id="v"><time datetime="2024-03-05">5</time></button>
+                        <button onclick="change(this.id)" id="vi"><time datetime="2024-03-06">6</time></button>
+                        <button onclick="change(this.id)" id="vii"><time datetime="2024-03-07">7</time></button>
+                        <button onclick="change(this.id)" id="viii"><time datetime="2024-03-08">8</time></button>
+                        <button onclick="change(this.id)" id="ix"><time datetime="2024-03-09">9</time></button>
+                        <button onclick="change(this.id)" id="x"><time datetime="2024-03-10">10</time></button>
+                        <button onclick="change(this.id)" id="xi"><time datetime="2024-03-11">11</time></button>
+                        <button onclick="change(this.id)" id="xii"><time datetime="2024-03-12">12</time></button>
+                        <button onclick="change(this.id)" id="xiii"><time datetime="2024-03-13">13</time></button>
+                        <button onclick="change(this.id)" id="xiv"><time datetime="2024-03-14">14</time></button>
+                        <button onclick="change(this.id)" id="xv"><time datetime="2024-03-15">15</time></button>
+                        <button onclick="change(this.id)" id="xvi"><time datetime="2024-03-16">16</time></button>
+                        <button onclick="change(this.id)" id="xvii"><time datetime="2024-03-17">17</time></button>
+                        <button onclick="change(this.id)" id="xviii"><time datetime="2024-03-18">18</time></button>
+                        <button onclick="change(this.id)" id="xix"><time datetime="2024-03-19">19</time></button>
+                        <button onclick="change(this.id)" id="xx"><time datetime="2024-03-20">20</time></button>
+                        <button onclick="change(this.id)" id="xxi"><time datetime="2024-03-21">21</time></button>
+                        <button onclick="change(this.id)" id="xxii"><time datetime="2024-03-22">22</time></button>
+                        <button onclick="change(this.id)" id="xxiii"><time datetime="2024-03-23">23</time></button>
+                        <button onclick="change(this.id)" id="xxiv"><time datetime="2024-03-24">24</time></button>
+                        <button onclick="change(this.id)" id="xxv"><time datetime="2024-03-25">25</time></button>
+                        <button onclick="change(this.id)" id="xxvi"><time datetime="2024-03-26">26</time></button>
+                        <button onclick="change(this.id)" id="xxvii"><time datetime="2024-03-27">27</time></button>
+                        <button onclick="change(this.id)" id="xxviii"><time datetime="2024-03-28">28</time></button>
+                        <button onclick="change(this.id)" id="xxix"><time datetime="2024-03-29">29</time></button>
+                        <button onclick="change(this.id)" id="xxx"><time datetime="2024-03-30">30</time></button>
+                        <button onclick="change(this.id)" id="xxxi"><time datetime="2024-03-31">31</time></button>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-main" id="box-selezionato">
+                <div class="grid-container" id="selezionato">
+                    <div class="nome-giorno-selezionato" id="nome-gs">Mercoledì</div>
+                    <div class="numero-giorno-selezionato" id="numero-gs">27</div>
+                    <div class="mese-giorno-selezionato">Marzo</div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="calendario.js"></script>
+    </body>
+</html>

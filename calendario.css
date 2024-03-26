@@ -1,0 +1,252 @@
+:root {
+    --bg: #2f3e46;
+    --box: #354f52;
+    --txt: #cad2c5;
+    --sel: #52796f;
+    --other: #84a98c;
+  }
+
+
+body {
+    background-color: var(--bg);
+    text-align: center;
+    font-variant: small-caps;   /*mette tutte lettere maiuscole*/
+    color: var(--txt);
+} 
+
+.titolo {
+    margin: 2%;
+    font-weight: 900;       /*spessore font*/
+    font-size: 4.85vw;      /*grandezza font titolo*/
+}
+
+.sotto-titolo {
+    font-weight: 900;       /*spessore font*/
+    margin-top: 2vh;
+    font-size: 2.85vw;      /*grandezza font sotto-titolo*/
+}
+
+#main { /*tutta la griglia principale*/
+    margin-top: 10vh;
+    margin-right: 15vw;
+    margin-left: 15vw;
+    box-sizing: border-box;   /*width e height includono anche border e padding, oltre al content*/
+    display: grid;
+    grid-template-areas:
+        'bcalendario bselezionato';
+    gap: 10px;  /*gap tra le due celle della griglia*/
+    grid-template-columns: 3fr 1fr;
+}
+#box-calendario { grid-area: bcalendario; }
+#box-selezionato { grid-area: bselezionato; }
+
+.sub-main{  /*le due celle della main*/
+    box-sizing: border-box;   /*width e height includono anche border e padding, oltre al content*/
+    background-color: var(--box);
+    border: 5px solid  var(--other);
+    border-radius: 20px; /*curvatura bordo*/
+    padding: 1vw;  /*tra border e contenuto*/
+}
+
+.nome-giorni,
+.griglia-giorni {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.nome-giorni {
+    border: 5px solid var(--other);   /*linee sopra e sotto i nomi dei giorni*/
+    border-right: none;
+    border-left: none;
+    margin-top: 3vw;        /*distanza tra titolo e nomi dei giorni*/
+}
+
+.nome-giorni > * {
+    font-size: 2vw;         /*grandezza font nomi dei giorni*/
+    color: var(--txt);
+    font-weight: 900;       /*spessore font*/
+    text-align: center;
+}
+
+.griglia-giorni > * {       /*numeri nella griglia*/
+    font-size: 1.75vw;
+    color: var(--txt);
+}
+  
+.griglia-giorni {
+    margin-top: 1.5vw;
+    margin-bottom: 2vh;
+    justify-content: center;
+    align-items: center; 
+}
+
+.griglia-giorni button:first-child {
+    grid-column: 5;         /*setta da quale colonna far partire il primo numero*/
+}
+  
+.griglia-giorni button {
+    margin: auto;
+    margin-top: 0.18vh;
+    margin-bottom: 0.18vh;
+    border: 0;              /*elimina il bordo del bottone*/
+    width: 4.5ch;           /*grandezza bottoni*/
+    height: 4.5ch;
+    border-radius: 40%;     /*lo rende arrotondato*/
+    background-color: transparent;
+    color: var(--txt); 
+}
+
+.griglia-giorni button:hover {   /*puntato con il mouse*/
+    outline: none;
+    background-color: var(--sel);
+    color: var(--txt); 
+    cursor: pointer;
+}
+
+.griglia-giorni button:active {     /*mentre lo sto selezionando*/
+    outline: 2px solid var(--txt);
+    background-color: var(--sel);
+    color: var(--txt);
+}
+
+#box-selezionato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#selezionato {
+    width: 100%;
+    height: 60%;
+    display: grid;
+    grid-template-areas:
+        'nomgs'
+        'numgs'
+        'mgs';
+    gap: 30px;  /*gap tra le celle della griglia*/
+    grid-template-rows: 1fr 3fr 1fr;
+}
+.numero-giorno-selezionato { grid-area: numgs; }
+.mese-giorno-selezionato { grid-area: mgs; }
+
+.mese-giorno-selezionato,
+.nome-giorno-selezionato {
+    font-weight: 900;       /*spessore font*/
+    font-size: 2.85vw;      /*grandezza font sotto-titolo*/
+    color: var(--txt);
+    text-align: center;
+}
+
+.numero-giorno-selezionato {
+    grid-area: numgs;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;       /*spessore font*/
+    font-size: 6.85vw;      /*grandezza font sotto-titolo*/
+    color: var(--txt);
+    border: 5px solid var(--other);   /*linee sopra e sotto i nomi dei giorni*/
+    border-right: none;
+    border-left: none;
+}
+
+/* Styles for small screens */
+@media screen and (max-width: 600px) {    
+    .titolo {
+        font-size: 5.85vw;      /*grandezza font titolo*/
+    }
+    
+    .sotto-titolo {
+        margin-top: 0.5vh;
+        font-size: 3.85vw;      /*grandezza font sotto-titolo*/
+    }
+    
+    
+    #main { /*tutta la griglia principale*/
+        margin-top: 2vh;
+        margin-right: 1vw;
+        margin-left: 1vw;
+        grid-template-areas:
+            'bcalendario'
+            'bselezionato';
+        grid-template-columns: 1fr;
+    }
+
+    #box-selezionato {
+        grid-column: 1;     /*Posiziona nella prima colonna*/
+        order: 2;           /*Sposta al secondo posto, dopo il calendario*/
+    }
+    
+    .nome-giorni {
+        border: 5px solid var(--other);   /*linee sopra e sotto i nomi dei giorni*/
+        border-right: none;
+        border-left: none;
+        margin-top: 2vw;        /*distanza tra titolo e nomi dei giorni*/
+    }
+    
+    .nome-giorni > * {
+        font-size: 3vw;         /*grandezza font nomi dei giorni*/
+    }
+    
+    .griglia-giorni > * {       /*numeri nella griglia*/
+        font-size: 2.75vw;
+    }
+      
+    .griglia-giorni {
+        margin-top: 1.5vw;
+    }
+      
+    .griglia-giorni button {
+        margin: auto;
+        margin-top: 0.2vh;
+        margin-bottom: 0.2vh;
+    }
+
+
+#box-selezionato{
+    padding:0%;
+}
+
+#selezionato {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-areas:
+        'nomgs numgs'
+        'mgs numgs';
+    gap: 0px;  /*gap tra le celle della griglia*/
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.mese-giorno-selezionato,
+.nome-giorno-selezionato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;       /*spessore font*/
+    font-size: 3.85vw;      /*grandezza font sotto-titolo*/
+    color: var(--txt);
+    border-right: 2.5px solid var(--other);
+}
+
+.nome-giorno-selezionato {
+    border-bottom: 2.5px solid var(--other);
+}
+.mese-giorno-selezionato {
+    border-top: 2.5px solid var(--other);
+}
+
+.numero-giorno-selezionato {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;       /*spessore font*/
+    font-size: 6.85vw;      /*grandezza font sotto-titolo*/
+    color: var(--txt);
+    border: none;
+    border-left: 2.5px solid var(--other);
+}
+}
